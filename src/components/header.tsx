@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <nav className="header">
       <Link onClick={() => setisOpen(false)} to={"/"}>
-        Home
+        HOME
       </Link>
       <Link onClick={() => setisOpen(false)} to={"/search"}>
         <FaSearch />
