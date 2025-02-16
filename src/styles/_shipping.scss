@@ -1,0 +1,61 @@
+.shipping{
+    @include flex;
+    .back-btn{
+        @include square(2.5rem);
+        background-color:$color2;
+        color: $color1;
+        @include flex;
+        position: fixed;
+        left: 2rem;
+        top: 2rem;
+        border-radius: 100%;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.384);
+        svg{
+            transition: all 0.3s;
+        }
+        &:hover svg{
+            translate:-0.25rem;
+        }
+    }
+    >form{
+        position: relative;
+        top: -50px;
+        max-width: 350px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        gap: 1rem;
+     >h1{
+        word-spacing: 2px;
+        margin: 2rem;
+        text-align: center;
+        margin-bottom:1rem;
+     }
+     >input,>select{
+        padding: 0.8rem;
+        border: 1px solid rgba(31,31,31,0.351);
+        background-color:inherit;
+        width: 100%;
+        outline: none;
+        border-radius: 5px;
+        font-size: 1.05rem;
+     }
+     >button{
+        cursor: pointer;
+        border: none;
+        outline: none;
+        padding: 1rem;
+        background-color: $color3;
+        color: $color1;
+        border-radius: 5px;
+        font-size: 1.05rem;
+        text-transform: uppercase;
+
+     }
+    }
+}
