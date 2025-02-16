@@ -27,6 +27,7 @@ const Home = lazy(() => import("./pages/Home"));
 const Search = lazy(() => import("./pages/Search"));
 const Cart = lazy(() => import("./pages/Cart"));
 const Shipping = lazy(() => import("./pages/shipping"));
+const Login = lazy(() => import("./pages/Login"));
 const App = () => {
   return (
     <Router>
@@ -36,6 +37,8 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search />} />
           <Route path="/cart" element={<Cart />} />
+          {/* Not Logged In Route */}
+          <Route path="/login" element={<Login />} />
           {/*Login Necessary*/}
           <Route>
             <Route path="/shipping" element={<Shipping />} />
