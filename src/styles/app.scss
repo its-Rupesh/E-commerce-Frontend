@@ -36,6 +36,7 @@
   @import "shipping.scss";
   @import "login.scss";
   @import "search.scss";
+  @import "sample.scss";
   @import "admin-styles/dashboard";
   @import "admin-styles/products";
   @import "admin-styles/chart";
@@ -75,7 +76,7 @@ overflow:auto;
     }
   }
   dialog{
-    border: 1px solid #ccc;
+    border: 1px solid #df1212;
     border-radius: 5px;
     padding: 10px;
     width: 100px;

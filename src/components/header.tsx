@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const user = { _id: "", role: "" };
+const user = { _id: "1", role: "admin" };
 
 const Header = () => {
   const [isOpen, setisOpen] = useState<boolean>(false);
@@ -21,7 +21,7 @@ const Header = () => {
         HOME
       </Link>
       <Link onClick={() => setisOpen(false)} to={"/search"}>
-        <FaSearch />
+        {/* <FaSearch /> */}
       </Link>
       <Link onClick={() => setisOpen(false)} to={"/cart"}>
         <FaShoppingBag />

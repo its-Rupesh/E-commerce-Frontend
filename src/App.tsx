@@ -26,7 +26,7 @@ const TransactionManagement = lazy(
 const Home = lazy(() => import("./pages/Home"));
 const Search = lazy(() => import("./pages/Search"));
 const Cart = lazy(() => import("./pages/Cart"));
-const Shipping = lazy(() => import("./pages/shipping"));
+const Shipping = lazy(() => import("./pages/Shipping"));
 const Login = lazy(() => import("./pages/Login"));
 const Order = lazy(() => import("./pages/Order"));
 const OrderDetails = lazy(() => import("./pages/OrderDetails"));
