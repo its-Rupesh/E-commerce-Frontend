@@ -13,6 +13,25 @@ export type ProductResponse = {
   message: Product[];
 };
 
+export type CategoryResponse = {
+  success: boolean;
+  message: string[];
+};
+
+export type SearchProductResponse = {
+  success: boolean;
+  message: Product[];
+  totalPage: number;
+};
+
+export type SearchProductRequest = {
+  search: string;
+  price: number;
+  category: string;
+  sort: string;
+  page: number;
+};
+
 // Custom Product Error
 export interface CustomError {
   status: number;
