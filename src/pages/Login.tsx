@@ -11,12 +11,13 @@ const Login = () => {
   const [gender, setGender] = useState("");
   const [date, setDate] = useState("");
 
-  const [login] = useLoginMutation();
+  const [login] = useLoginMutation(); // Redux api
 
   const loginHandler = async () => {
     try {
       const provider = new GoogleAuthProvider();
       const { user } = await signInWithPopup(auth, provider);
+      console.log(user);
 
       const res = await login({
         name: user.displayName!,

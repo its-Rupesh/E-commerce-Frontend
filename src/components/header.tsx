@@ -7,13 +7,22 @@ import {
   FaUser,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { HeaderPropsType } from "../types/propsTypes";
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase";
+import toast from "react-hot-toast";
 
-const user = { _id: "", role: "" };
-
-const Header = () => {
+const Header = ({ user }: HeaderPropsType) => {
   const [isOpen, setisOpen] = useState<boolean>(false);
-  const logoutHandler = () => {
-    setisOpen(false);
+
+  const logoutHandler = async () => {
+    try {
+      await signOut(auth);
+      setisOpen(false);
+      toast.success("Sign out Succesfully!!");
+    } catch (error) {
+      toast.error("Sign out failed");
+    }
   };
   return (
     <nav className="header">
