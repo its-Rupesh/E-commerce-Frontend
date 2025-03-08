@@ -1,7 +1,10 @@
 // Api Type
 import { Product, User } from "./types";
 
-export type MessageResponse = { success: boolean; message: string };
+export type MessageResponse = {
+  success: boolean;
+  message: string;
+};
 
 export type UserResponse = {
   success: boolean;
@@ -24,6 +27,18 @@ export type SearchProductResponse = {
   totalPage: number;
 };
 
+export type singleProductResponse = {
+  success: boolean;
+  message: Product;
+};
+export type updateProductResponse = {
+  success: boolean;
+  message: string;
+};
+export type deleteProductResponse = {
+  success: boolean;
+  message: string;
+};
 export type SearchProductRequest = {
   search: string;
   price: number;
@@ -31,7 +46,19 @@ export type SearchProductRequest = {
   sort: string;
   page: number;
 };
-
+export type newProductRequest = {
+  id: string;
+  formData: FormData;
+};
+export type updateProductRequest = {
+  productId: string;
+  id: string;
+  formData: FormData;
+};
+export type deleteProductRequest = {
+  productId: string;
+  id: string;
+};
 // Custom Product Error
 export interface CustomError {
   status: number;
