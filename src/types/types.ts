@@ -18,3 +18,19 @@ export interface Product {
   category: string;
   _id: string;
 }
+
+export type ShippingInfoType = {
+  address: string;
+  city: string;
+  state: string;
+  country: string;
+  pinCode: string;
+};
+export type CartItemsType = {
+  name: string;
+  photo: string;
+  price: number;
+  quantity: number;
+  productId: string;
+  stock: number;
+};

@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 
-import { User } from "./types";
+import { CartItemsType, User } from "./types";
 
 export interface HeaderPropsType {
   user: User | null;
@@ -18,5 +18,5 @@ export type ProductsProps = {
   name: string;
   price: number;
   stock: number;
-  handler: () => void;
+  handler: (cartItem: CartItemsType) => string | undefined;
 };

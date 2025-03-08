@@ -19,7 +19,18 @@ const ProductCard = ({
       <p>{name}</p>
       <span>₹{price}</span>
       <div>
-        <button onClick={() => handler()}>
+        <button
+          onClick={() =>
+            handler({
+              productId,
+              stock,
+              name,
+              photo,
+              price,
+              quantity: 1,
+            })
+          }
+        >
           <FaPlus />
         </button>
       </div>
