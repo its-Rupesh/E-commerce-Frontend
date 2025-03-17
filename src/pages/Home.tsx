@@ -16,6 +16,7 @@ const Home = () => {
     dispatch(addToCart(cartItem));
     toast.success(`${cartItem.name} Added to Cart..!!`);
   };
+  
   if (isError) toast.error("Cannot Fetch Products");
   return (
     <div className="home">
