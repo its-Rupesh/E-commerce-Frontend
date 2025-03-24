@@ -1,5 +1,13 @@
 // Api Type
-import { Product, User } from "./types";
+import {
+  allOrderType,
+  getMyOrderResponseType,
+  orderItemType,
+  Product,
+  ShippingInfoType,
+  singleOrderType,
+  User,
+} from "./types";
 
 export type MessageResponse = {
   success: boolean;
@@ -59,6 +67,36 @@ export type deleteProductRequest = {
   productId: string;
   id: string;
 };
+export type newOrderRequest = {
+  shippingInfo: ShippingInfoType;
+  user: string;
+  subTotal: number;
+  tax: number;
+  shippingCharges: number;
+  discount: number;
+  Total: number;
+  orderItem: orderItemType[];
+};
+export type getMyOrderType = {
+  success: boolean;
+  orders: getMyOrderResponseType[];
+};
+export type allOrderResponseType = {
+  success: boolean;
+  allOrder: allOrderType[];
+};
+export type singleOrderResponseType = {
+  success: boolean;
+  order: singleOrderType;
+};
+export type updateOrderResponseType = {
+  success: boolean;
+  message: string;
+};
+// export type updateOrderResponseType = {
+//   success: boolean;
+//   message: string;
+// };
 // Custom Product Error
 export interface CustomError {
   status: number;

@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUser } from "./redux/api/userApi";
 import { userReducerInitialState } from "./types/reducer-types";
 import ProtectedRoute from "./components/protectedRoute";
+import NotFound from "./pages/NotFound";
 
 const Dashboard = lazy(() => import("./pages/admin/dashboard"));
 const Products = lazy(() => import("./pages/admin/products"));
@@ -115,6 +116,7 @@ const App = () => {
             element={<TransactionManagement />}
           />
           {/* </Route> */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
       <Toaster position="bottom-center" />
