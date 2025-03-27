@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { FaTrash } from "react-icons/fa";
 import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import AdminSidebar from "../../../components/admin/AdminSidebar";
@@ -36,21 +35,6 @@ const defaultData = {
   user: { name: "", _id: "" },
   _id: "",
 };
-type OrderType = {
-  name: string;
-  address: string;
-  city: string;
-  state: string;
-  country: string;
-  pinCode: number;
-  status: string;
-  subtotal: number;
-  discount: number;
-  shippingCharges: number;
-  tax: number;
-  total: number;
-  orderItem: OrderItem[];
-};
 
 const TransactionManagement = () => {
   const { id } = useParams();
@@ -77,7 +61,7 @@ const TransactionManagement = () => {
 
   // console.log(orderItem);
 
-  const [order, setOrder] = useState({});
+  // const [order, setOrder] = useState({});
 
   const [updateOrder] = useUpdateOrderMutation();
   const [deleteOrder] = useDeleteOrderMutation();

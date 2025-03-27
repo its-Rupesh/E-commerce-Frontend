@@ -1,15 +1,12 @@
 import { ReactElement, useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
-import { actions, Column } from "react-table";
+import { Column } from "react-table";
 import AdminSidebar from "../../components/admin/AdminSidebar";
 import TableHOC from "../../components/admin/TableHOC";
-import { useSelector } from "react-redux";
-import { userReducerInitialState } from "../../types/reducer-types";
-import { useAllProductsQuery } from "../../redux/api/productApi";
+import { Skeleton } from "../../components/Loader";
 import { useAllOrderQuery } from "../../redux/api/orderApi";
 import { CustomError } from "../../types/api-Types";
-import toast from "react-hot-toast";
-import { Skeleton } from "../../components/Loader";
 
 interface DataType {
   user: string;
@@ -48,10 +45,6 @@ const columns: Column<DataType>[] = [
 ];
 
 const Transaction = () => {
-  const { user } = useSelector(
-    (state: { userReducer: userReducerInitialState }) => state.userReducer
-  );
-
   const { data, isError, isLoading, error } = useAllOrderQuery("");
 
   console.log(data);

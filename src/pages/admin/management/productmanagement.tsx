@@ -13,24 +13,19 @@ import { server } from "../../../redux/store";
 import { Skeleton } from "../../../components/Loader";
 import { responseToast } from "../../../utils/feature";
 
-const img =
-  "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXN8ZW58MHx8MHx8&w=1000&q=804";
-
 const Productmanagement = () => {
-  const { user, loading } = useSelector(
+  const { user } = useSelector(
     (state: { userReducer: userReducerInitialState }) => state.userReducer
   );
 
   const params = useParams();
   const navigate = useNavigate();
 
-  const { data, isError, isLoading, error } = useProductsDetailsQuery(
-    params.id!
-  );
+  const { data, isLoading } = useProductsDetailsQuery(params.id!);
 
-  const [product, setproduct] = useState({});
+  // const [product, setproduct] = useState({});
 
-  const { _id, photo, category, name, stock, price } = data?.message || {
+  const { photo, category, name, stock, price } = data?.message || {
     photo: "",
     category: "",
     name: "",
@@ -50,7 +45,7 @@ const Productmanagement = () => {
   const [categoryUpdate, setCategoryUpdate] = useState<string>(category);
   const [photoUpdate, setPhotoUpdate] = useState<string>(photo);
   const [photoFile, setPhotoFile] = useState<File>();
-
+  console.log(photoUpdate);
   const [updateProduct] = useUpdateProductMutation();
   const [deleteProduct] = useDeleteProductMutation();
 

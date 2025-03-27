@@ -7,7 +7,7 @@ import { responseToast } from "../../../utils/feature";
 import { useNavigate } from "react-router-dom";
 
 const NewProduct = () => {
-  const { user, loading } = useSelector(
+  const { user } = useSelector(
     (state: { userReducer: userReducerInitialState }) => state.userReducer
   );
 
