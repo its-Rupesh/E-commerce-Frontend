@@ -6,7 +6,6 @@ import {
 } from "../redux/api/productApi";
 import { CustomError } from "../types/api-Types";
 import toast from "react-hot-toast";
-import { server } from "../redux/store";
 import { Skeleton } from "../components/Loader";
 import { CartItemsType } from "../types/types";
 import { addToCart } from "../redux/reducer/cartReducer";

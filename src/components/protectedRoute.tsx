@@ -1,4 +1,3 @@
-import React from "react";
 import { ProtectedRoutePropsType } from "../types/propsTypes";
 import { Navigate, Outlet } from "react-router-dom";
 

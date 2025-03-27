@@ -1,19 +1,17 @@
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useState } from "react";
+import toast from "react-hot-toast";
 import { BiArrowBack } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import {
-  cartReducerInitialState,
-  customerOrder,
-  userReducerInitialState,
-} from "../types/reducer-types";
-import toast from "react-hot-toast";
+import { orderApi } from "../redux/api/orderApi";
 import {
   emptyCartInfoAfterPayement,
   shippingInfoData,
 } from "../redux/reducer/cartReducer";
-import { orderApi } from "../redux/api/orderApi";
-import { useMyOrdersQuery, useNewOrderMutation } from "../redux/api/orderApi";
+import {
+  cartReducerInitialState,
+  userReducerInitialState,
+} from "../types/reducer-types";
 
 interface RazorpayOptions {
   key: string;
@@ -55,7 +53,7 @@ const Shipping = () => {
   const dispatch = useDispatch();
 
   const [justPaid, setjustPaid] = useState(false);
-
+  console.log(justPaid);
   const { cartItems, Total, subTotal, tax, shippingCharges, discount } =
     useSelector(
       (state: { cartReducer: cartReducerInitialState }) => state.cartReducer

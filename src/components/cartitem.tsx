@@ -11,13 +11,12 @@ type CartItemTpes = {
 };
 const CartItem = ({
   cartItem,
-  idx,
   incrementHandler,
   decrementHandler,
   removeHandler,
 }: CartItemTpes) => {
-  const index = idx;
-  const { photo, productId, name, price, quantity, stock } = cartItem;
+  // const index = idx;
+  const { photo, productId, name, price, quantity } = cartItem;
 
   return (
     <div className="cartItem">

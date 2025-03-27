@@ -53,7 +53,7 @@ const Cart = () => {
           dispatch(discountApplied(res.data.discount));
           dispatch(calculatePrice());
         })
-        .catch((e) => {
+        .catch(() => {
           // toast.error(e.response.data.message);
           setisValidCouponCode(false);
           dispatch(discountApplied(0));

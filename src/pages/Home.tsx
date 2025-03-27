@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 import { useLatestProductsQuery } from "../redux/api/productApi";
 import toast from "react-hot-toast";
-import Loader, { Skeleton } from "../components/Loader";
+import { Skeleton } from "../components/Loader";
 import { CartItemsType } from "../types/types";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/reducer/cartReducer";
@@ -16,7 +16,7 @@ const Home = () => {
     dispatch(addToCart(cartItem));
     toast.success(`${cartItem.name} Added to Cart..!!`);
   };
-  
+
   if (isError) toast.error("Cannot Fetch Products");
   return (
     <div className="home">
