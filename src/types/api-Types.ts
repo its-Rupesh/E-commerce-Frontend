@@ -93,6 +93,11 @@ export type updateOrderResponseType = {
   success: boolean;
   message: string;
 };
+export type allUserResponse = {
+  success: boolean;
+  user: User[];
+};
+
 // export type updateOrderResponseType = {
 //   success: boolean;
 //   message: string;

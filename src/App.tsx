@@ -45,11 +45,27 @@ const App = () => {
     (state: { userReducer: userReducerInitialState }) => state.userReducer
   );
   const dispatch = useDispatch();
+  // useEffect(() => {
+  //   onAuthStateChanged(auth, async (user) => {
+  //     if (user) {
+  //       const data = await getUser(user.uid);
+  //       dispatch(userExist(data.user));
+  //     } else {
+  //       dispatch(userNotExist());
+  //     }
+  //   });
+  // }, [user]);
+
   useEffect(() => {
     onAuthStateChanged(auth, async (user) => {
       if (user) {
-        const data = await getUser(user.uid);
-        dispatch(userExist(data.user));
+        try {
+          const data = await getUser(user.uid);
+          dispatch(userExist(data.user));
+        } catch (error) {
+          console.error("User does not exist in DB. Logging out...");
+          dispatch(userNotExist());
+        }
       } else {
         dispatch(userNotExist());
       }

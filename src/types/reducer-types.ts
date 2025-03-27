@@ -17,3 +17,7 @@ export interface cartReducerInitialState {
   Total: number;
   shippingInfo: ShippingInfoType;
 }
+export type customerOrder = Omit<
+  cartReducerInitialState,
+  "loading" | "cartItems"
+>;

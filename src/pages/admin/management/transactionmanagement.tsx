@@ -73,6 +73,8 @@ const TransactionManagement = () => {
     shippingCharges,
   } = data?.order || defaultData;
 
+  console.log(orderItem);
+
   // console.log(orderItem);
 
   const [order, setOrder] = useState({});

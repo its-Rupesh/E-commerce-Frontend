@@ -33,9 +33,8 @@ export type CartItemsType = {
   productId: string;
   stock: number;
 };
-export type orderItemType = Omit<CartItemsType, "stock"> & {
-  _id: string;
-};
+export type orderItemType = Omit<CartItemsType, "stock"> & { _id: string };
+
 export type getMyOrderResponseType = {
   shippingInfo: ShippingInfoType;
   _id: string;
