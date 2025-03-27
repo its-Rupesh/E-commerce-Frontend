@@ -242,7 +242,7 @@ const Shipping = () => {
     };
     try {
       const response = await fetch(
-        "http://localhost:8000/api/v1/create-order",
+        "https://e-commerce-backend-2zup.onrender.com/api/v1/create-order",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -267,7 +267,7 @@ const Shipping = () => {
         handler: async (response) => {
           try {
             const verifyResponse = await fetch(
-              "http://localhost:8000/api/v1/create-order/verify-payment",
+              "https://e-commerce-backend-2zup.onrender.com/api/v1/create-order/verify-payment",
               {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
